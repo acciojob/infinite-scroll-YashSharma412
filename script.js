@@ -11,3 +11,16 @@ for( let i=0; i<10; i++){
 	addOneItem();
 }
 
+scrollContainer.addEventListener("scroll", () => {
+	const maxScrollHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+	let currentScrollTop = scrollContainer.scrollTop;
+
+	let threshhold = Math.abs(maxScrollHeight - currentScrollTop);
+
+	if (threshhold <= 5) {
+		for (let i = 0; i < 2; i++) {
+			addOneItem();
+		}
+	}
+});
+
